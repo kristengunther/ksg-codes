@@ -1,3 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Variables */
+$green: #1A7426;
+$navy: #003066;
+$dark-navy: #001429;
+$yellow: #F6EBC2;
+
+/* General */
 body {
-    background-color: #499999;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
 }
+
+/* Header */
+
+
+/* Components */
+
+
+/* Main */
+#welcome {
+    grid-area: welcome;
+    background-color: $dark-navy;
+}
+
+#project-types {
+    grid-area: projecttypes;
+    background-color: $green;
+}
+
+#why-website {
+    grid-area: why;
+    background-color: $yellow;
+}
+
+#brags {
+    grid-area: brags;
+    background-color: $navy;
+}
+
+#home {
+    display: grid;
+    grid-template: auto / repeat(5, 1fr);
+    grid-template-areas: 
+    'welcome welcome welcome welcome welcome'
+    '. projecttypes projecttypes projecttypes .'
+    'why why why why why'
+    '. brags brags brags .';
+}
+
+/* Footer */
