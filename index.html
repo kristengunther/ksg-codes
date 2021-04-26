@@ -12,76 +12,99 @@
 
 <body>
     <header>
-        <div id="logo">KSG Codes</div>
+        <div id="logo"><a href="index.html">KSG Codes</a></div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <div>
+                <a href="index.html">Home</a>
+            </div>
+            <div>
+               <a href="projects.html">Projects</a> 
+            </div>
+            <div>
+                <a href="contact.html">Contact</a>
+            </div>
             </ul>
         </nav>
     </header>
-    <main id="home">
+    <main>
         <section id="welcome">
-            <div>
-                <img src="resources/images/KGHeadshot-square.jpg" alt="KSG Outdoor Headshot">
+            <div class="inner-welcome">
+            <div class="welcome-img">
+                <img class="featuredimg" src="resources/images/KGHeadshot-square.jpg" alt="KSG Outdoor Headshot">
             </div>
-            <div>
-                <h1>Welcome to KSG Codes</h1>
-                <p>Home to front-end web dev projects</p>
+            <div class="welcome-text">
+                <h1>Welcome to <span class="highlight">KSG Codes</span></h1>
+                <p>Home to Kristen's front-end web dev projects</p>
+                <div class="welcome-buttons">
+                    <button class="green-btn">In Progress</button>
+                    <button class="green-btn">Completed</button>
+                    <button class="green-btn">Planned</button>
+                </div>
+            </div>
             </div>
         </section>
         <section id="project-types">
+            <div class="inner-projects">
             <h2>Project Types</h2>
             <div class="types">
                 <div class="type">
+                    <img src="resources/images/painting.png" alt="Green icon of a paint pallette">
                     <h3>CSS</h3>
                 </div>
                 <div class="type">
+                    <img src="resources/images/toolbox.png" alt="Green icon of a toolbox">
                     <h3>JavaScript</h3>
                 </div>
                 <div class="type">
+                    <img src="resources/images/wordpress.png" alt="Green icon of a web browser using PHP">
                     <h3>WordPress</h3>
                 </div>
             </div>
+            </div>
         </section>
         <section id="why-website">
-            <h2>Goals</h2>
-            <p>This site exists to serve as a working library of planned, on-going, and completed web development projects to further advance my CSS, JavaScript, PHP, and Wordpress skills.</p>
-        </section>
-        <aside id="brags">
-            <h2>Site Features</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>Created with Visual Studio Code</h3>
-                </div>
-                <div class="feature">
-                    <h3>100% Coded & Designed by KSG</h3>
-                </div>
-                <div class="feature">
-                    <h3>A11y Best Practices</h3>
-                </div>
-                <div class="feature">
-                    <h3>HTML5, CSS3, SCSS, & JavaScript</h3>
-                </div>
-                <div class="feature">
-                    <h3>Version Control with Git</h3>
-                </div>
+            <div class="inner-why">
+            <div id="goals">
+                <h2>Goals</h2>
+                <p>This site exists to serve as a working library of on-going, completed, and planned web development projects to further advance my CSS, JavaScript, PHP, and Wordpress skills.</p>
+                <button class="green-btn">Let's see some projects!</button>
             </div>
-        </aside>
+            <aside id="brags">
+                <h3>Site Features</h3>
+                <div class="features">
+                    <div class="feature">
+                        <p>Created with Visual Studio Code</p>
+                    </div>
+                    <div class="feature">
+                        <p>A11y Best Practices</p>
+                    </div>
+                    <div class="feature">
+                        <p>HTML5, CSS3, SCSS, & JavaScript</p>
+                    </div>
+                    <div class="feature">
+                        <p>Version Control with Git</p>
+                    </div>
+                </div>
+            </aside>
+            </div>
+        </section>
     </main>
     <footer>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="https://github.com/kristengunther" target="_blank"><i class="fab fa-github"></i> Find me on Github</a></li>
-                    <li><a href="https://ksgunther.com/" target="_blank"><i class="fab fa-wordpress"></i> View my business portfolio</a></li>
-                    <li><a href="https://www.linkedin.com/in/kristen-gunther/" target="_blank"><i class="fab fa-linkedin-in"></i> Connect on LinkedIn</a></li>
-                    <li><a href="mailto:kristen@ksgunther.com"><i class="fas fa-envelope-open-text"></i> Drop me a message</a></li>
-                </ul>            
-            </nav>
-        </div>
-        <div>
+        <nav>
+            <div>
+                <a href="https://github.com/kristengunther" target="_blank"><i class="fab fa-github"></i> Find me on Github</a>
+            </div>
+            <div>
+                <a href="https://ksgunther.com/" target="_blank"><i class="fab fa-wordpress"></i> View my business portfolio</a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/kristen-gunther/" target="_blank"><i class="fab fa-linkedin-in"></i> Connect on LinkedIn</a>
+            </div>
+            <div>
+                <a href="mailto:kristen@ksgunther.com"><i class="fas fa-envelope-open-text"></i> Drop me a message</a>
+            </div>            
+        </nav>
+        <div id="credit">
             <p>&#169; 2021 KS Gunther</p>
         </div>
     </footer>

@@ -1,52 +1,344 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700&display=swap');
 
 /* Variables */
 $green: #1A7426;
 $navy: #003066;
 $dark-navy: #001429;
 $yellow: #F6EBC2;
+$lightgrey: #EBECEE;
+
+%navlink {
+    text-decoration: none;
+}
+
+%stdrow {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+%innerrow {
+    width: 70%;
+    margin: auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+    %innerrow {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    %innerrow {
+        width: 90%;
+    }
+}
+
+%button {
+    text-transform: uppercase;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 0;
+    min-width: 160px;
+}
 
 /* General */
-body {
+* {
     box-sizing: border-box;
     font-family: 'Red Hat Display', sans-serif;
+    margin: 0;
+}
+
+html, body {
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template: 100px auto auto / 15% repeat(3, 1fr) 15%;
+    column-gap: 20px;
+    font-size: 18px;
+    grid-template-areas: 
+    '. header header header .'
+    'main main main main main'
+    'footer footer footer footer footer';
+    color: $dark-navy;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+    body {
+        grid-template: auto auto auto / 10% repeat(3, 1fr) 10%;
+        grid-template-areas: 
+        '. header header header .'
+        'main main main main main'
+        'footer footer footer footer footer';
+        column-gap: 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    body {
+        grid-template: auto auto auto / 5% repeat(3, 1fr) 5%;
+        grid-template-areas: 
+        '. header header header .'
+        'main main main main main'
+        'footer footer footer footer footer';
+        column-gap: 10px;
+    }
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+h2 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+p {
+    padding-bottom: 1.5rem;
 }
 
 /* Header */
+header {
+    grid-area: header;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    nav {
+        display: flex;
+        flex-grow: 3;
+        div {
+            flex-grow: 1;
+            justify-content: flex-end;
+            text-align: center;
+        }
+        a {
+            @extend %navlink;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+    }
+}
+
+#logo {
+    font-weight: 700;
+    color:$navy;
+    text-align: center;
+    width: 100%;
+    font-size: 1.6rem;
+    flex-grow: 2;
+    a {
+        @extend %navlink;
+        color: $navy;
+    }
+}
+
+@media only screen and (min-width: 981px) {
+    #logo {
+        text-align: left;
+        max-width: 25%;
+    }
+
+    header {
+        nav {
+            div {
+            text-align: right;
+            }
+        }
+    }
+}
 
 
 /* Components */
+.featuredimg {
+    width: 100%;
+    margin: auto;
+    border-radius: 10%;
+}
 
+a {
+    color: $green;
+}
+
+a:visited {
+    color: $green;
+}
+
+a:hover {
+    color: $navy;
+}
+
+a:active {
+    color:$navy;
+}
+
+.yellow-btn {
+    background-color: $yellow;
+    @extend %button;
+}
+
+.green-btn {
+    background-color: $green;
+    @extend %button;
+    color: #ffffff;
+}
+
+.dark-navy-btn {
+    background-color: $dark-navy;
+    @extend %button;
+    color: #ffffff;
+}
+
+.highlight {
+    border-bottom: solid $yellow 3px;
+}
 
 /* Main */
+main {
+    grid-area: main;
+}
+
 #welcome {
-    grid-area: welcome;
-    background-color: $dark-navy;
+    @extend %stdrow;
+    background-color: $navy;
+}
+
+.inner-welcome {
+    @extend %innerrow;
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    grid-template-areas:
+    'welcomeimg welcometext welcometext';
+    column-gap: 40px;
+}
+
+.welcome-img {
+    grid-area: welcomeimg;
+}
+
+.welcome-text {
+    grid-area: welcometext;
+    color: #ffffff;
+    margin: auto 0;
+    h1 {
+        padding-bottom: 2rem;
+    }
+}
+
+.welcome-buttons {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #project-types {
-    grid-area: projecttypes;
-    background-color: $green;
+    background-color: $lightgrey;
+    @extend %stdrow;
+    h2 {
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    .types {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .type {
+            flex: 1 1 20%;
+            text-align: center;
+        }
+    }
+}
+
+.inner-projects {
+    @extend %innerrow;
 }
 
 #why-website {
-    grid-area: why;
-    background-color: $yellow;
+    @extend %stdrow;
+    h2 {
+        padding-bottom: 1rem;
+    }
+
+}
+
+.inner-why {
+    @extend %innerrow;
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+    grid-template-areas: 
+    'goals goals brags';
+    column-gap: 40px;
+}
+
+#goals {
+    grid-area: goals;
+    margin: auto;
 }
 
 #brags {
     grid-area: brags;
-    background-color: $navy;
-}
-
-#home {
-    display: grid;
-    grid-template: auto / repeat(5, 1fr);
-    grid-template-areas: 
-    'welcome welcome welcome welcome welcome'
-    '. projecttypes projecttypes projecttypes .'
-    'why why why why why'
-    '. brags brags brags .';
+    background-color: $yellow;
+    border-radius: 10%;
+    padding: 2rem;
+    text-align: center;
+    .features {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: space-between;
+        .feature {
+            padding: .7rem;
+            text-align: center;
+            margin: auto;
+            p {
+                padding-bottom: 0;
+            }
+        }
+    }
 }
 
 /* Footer */
+footer {
+    grid-area: footer;
+    @extend %stdrow;
+    text-align: center;
+    background-color: $dark-navy;
+    color: #ffffff;
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        div {
+            flex-grow: 1;
+            i {
+                padding-right: 8px;
+            }
+            a {
+                @extend %navlink;
+                color: #ffffff;
+            }
+
+            a:visited, a:hover, a:active {
+                color: $yellow;
+            }
+        }
+    }
+    #credit {
+        padding-top: 1rem;
+        p {
+            padding-bottom: 0;
+        }
+    }
+}
